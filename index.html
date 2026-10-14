@@ -1,0 +1,27 @@
+---
+layout: default
+main_class: home
+description: Speak or type, and Metaphrasis translates between 20 languages — on your iPhone wherever it can.
+---
+<section class="hero">
+  <picture>
+    <source srcset="{{ '/assets/icon-256-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
+    <img src="{{ '/assets/icon-256.png' | relative_url }}" alt="Metaphrasis icon" width="128" height="128">
+  </picture>
+  <h1>Metaphrasis</h1>
+  <p class="tagline">Speak or type, and Metaphrasis translates between 20 languages — on your iPhone wherever it can.</p>
+  {% if site.metaphrasis.app_store_url != "" %}
+    <a class="store" href="{{ site.metaphrasis.app_store_url }}">Download on the App Store</a>
+  {% else %}
+    <span class="store soon">Coming soon to the App Store</span>
+  {% endif %}
+</section>
+
+<ul class="features">
+  <li><strong>Text and speech</strong>Type, or tap the microphone and talk, and the translation follows as you go.</li>
+  <li><strong>Conversations</strong>Face to face on one phone, or across two phones, each person speaking their own language.</li>
+  <li><strong>On your device</strong>Apple and Metaphrasis language packs translate without sending your words anywhere.</li>
+  <li><strong>Read aloud</strong>Every translation can be spoken, in the voice you choose for each language.</li>
+  <li><strong>Favorites</strong>Keep the phrases you need, and find them again in a tap.</li>
+  <li><strong>DeepL and Google</strong>Add your own API key to use them as well, in the order you prefer.</li>
+</ul>

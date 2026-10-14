@@ -1,0 +1,18 @@
+# Release notes, newest first. The one copy: /releases/ renders it, and the
+# App Store's "What's New in This Version" is pasted from it.
+#
+# version — exactly the app's MARKETING_VERSION, quoted ("1.10" unquoted is the
+#           number 1.1). It becomes the anchor the app links to: /releases/#1.0
+# date    — YYYY-MM-DD, the day it reached the App Store.
+# notes   — one line each, Markdown allowed.
+
+- version: "1.0"
+  date: "[TBD: release date]"
+  notes:
+    - First release.
+    - Translate typed or spoken text between 20 languages.
+    - Hold a conversation face to face on one phone, or across two phones.
+    - Translate on your device with Apple's languages and Metaphrasis language packs.
+    - Use DeepL and Google with your own API key, in the order you choose.
+    - Hear translations read aloud in the voice you choose for each language.
+    - Keep the phrases you need as favorites.

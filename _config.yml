@@ -1,0 +1,42 @@
+# The Metaphrasis website: product page, policies, support and release notes.
+# Built by GitHub Pages itself (Jekyll), with no theme and no plugins beyond
+# the ones Pages enables anyway. See README.md.
+
+title: Metaphrasis
+description: Speak or type, and Metaphrasis translates — on your iPhone wherever it can.
+lang: en
+
+# Where the site is served. Moving to a custom domain later: set `url` to it,
+# set `baseurl` to "", add a CNAME file, and change AppLinks.site in the app in
+# the same release. The paths below the root never change.
+url: "https://vladyslavc11.github.io"
+baseurl: "/MetaphrasisWeb"
+
+# ---------------------------------------------------------------------------
+# PLACEHOLDERS. Every "[TBD: …]" is a choice still to be made, and the pages
+# read it from here and nowhere else, so filling one in fills every page.
+# `grep -rn "TBD" .` lists what is left.
+# ---------------------------------------------------------------------------
+metaphrasis:
+  # Who publishes the app: a person's name or a company's legal name. Used in
+  # the © line and as the party in both policies.
+  publisher: "[TBD: publisher]"
+
+  # Where privacy and support questions go. Shown on Support, Privacy and Terms.
+  contact_email: "[TBD: contact email]"
+
+  # Whose law governs the Terms of Use, e.g. "Greece" or "Ukraine".
+  governing_law: "[TBD: country]"
+
+  # The date both policies take effect, normally the day they are published.
+  policies_effective: "[TBD: effective date]"
+
+  # The App Store page, once App Store Connect has created the app record.
+  # Empty shows "Coming soon to the App Store".
+  app_store_url: ""
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

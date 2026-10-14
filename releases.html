@@ -1,0 +1,19 @@
+---
+layout: default
+title: Release Notes
+permalink: /releases/
+description: What changed in each version of Metaphrasis.
+---
+<h1>Release Notes</h1>
+
+{% for release in site.data.releases %}
+<section class="release" id="{{ release.version }}">
+  <h2>Version {{ release.version }}</h2>
+  <time>{{ release.date | date: "%-d %B %Y" }}</time>
+  <ul>
+    {% for note in release.notes %}
+    <li>{{ note | markdownify | remove: "<p>" | remove: "</p>" | strip }}</li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}

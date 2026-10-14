@@ -1,0 +1,151 @@
+/* One stylesheet for every page. System fonts only: the site makes no
+   third-party request, which the privacy policy says. */
+
+:root {
+  --bg: #ffffff;
+  --surface: #f4f5f7;
+  --text: #1c1d1f;
+  --muted: #5f6368;
+  --rule: #e3e5e8;
+  --accent: #1d5fa8;
+  --brand: #183a5a;
+  --radius: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111214;
+    --surface: #1c1d20;
+    --text: #ececee;
+    --muted: #a0a4ab;
+    --rule: #2c2e33;
+    --accent: #7cb4f2;
+    --brand: #cfe0f2;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a { color: var(--accent); text-underline-offset: 2px; }
+
+.site-header, main, .site-footer {
+  width: 100%;
+  max-width: 44rem;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--brand);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.brand img { border-radius: 7px; }
+
+.site-header nav { display: flex; gap: 18px; }
+
+.site-header nav a { color: var(--muted); text-decoration: none; }
+.site-header nav a:hover { color: var(--text); }
+
+main { flex: 1; padding-bottom: 48px; }
+
+h1, h2, h3 { line-height: 1.25; color: var(--brand); }
+h1 { font-size: 2rem; margin: 0.5em 0 0.25em; }
+h2 { font-size: 1.3rem; margin-top: 2em; }
+h3 { font-size: 1.05rem; margin-top: 1.6em; }
+
+.effective { color: var(--muted); margin-top: 0; }
+
+.summary {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 4px 20px;
+  margin: 24px 0;
+}
+
+hr { border: 0; border-top: 1px solid var(--rule); margin: 40px 0; }
+
+code { font-size: 0.9em; }
+
+/* Product page */
+
+.hero { text-align: center; padding: 32px 0 8px; }
+.hero picture img { border-radius: 22.37%; box-shadow: 0 8px 24px rgb(0 0 0 / 0.15); }
+.hero h1 { font-size: 2.4rem; margin-top: 20px; }
+.hero .tagline { color: var(--muted); font-size: 1.15rem; margin: 0 auto; max-width: 30rem; }
+
+.store {
+  display: inline-block;
+  margin: 24px 0 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--bg);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.store.soon { background: var(--surface); color: var(--muted); }
+
+.features {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.features li {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+}
+
+.features strong { display: block; color: var(--brand); }
+
+/* Release notes */
+
+.release { border-top: 1px solid var(--rule); padding-top: 8px; scroll-margin-top: 16px; }
+.release h2 { margin-top: 1em; }
+.release time { color: var(--muted); }
+
+/* Footer */
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding-top: 20px;
+  padding-bottom: 32px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.site-footer a { color: var(--muted); }
+.site-footer p { margin: 12px 0 0; }
