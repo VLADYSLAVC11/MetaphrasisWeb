@@ -13,6 +13,7 @@ so **they must never change**:
 | `/privacy/` | Privacy Policy | `privacy.md` |
 | `/terms/` | Terms of Use | `terms.md` |
 | `/support/` | Support | `support.md` |
+| `/plans/` | Free, Basic and Premium, with prices | `plans.md` |
 | `/releases/` | release notes; `#1.0` jumps to a version | `releases.html` + `_data/releases.yml` |
 
 The design reasons are in the app repository's
@@ -31,6 +32,15 @@ grep -rn "TBD" --include="*.yml" --include="*.md" --include="*.html" .
 
 The Privacy Policy and Terms are drafts written from what the app does. Have
 them read by someone qualified before publishing.
+
+## Plans and prices
+
+`plans.md` shows each plan's US price and what its week or month includes:
+minutes of cloud speech, words translated, cloud voice. Those amounts are
+copied by hand from the server's `METAPHRASIS_CLOUD_PRODUCTS` (the Metaphrasis
+repository, `backend/`), and nothing keeps the two in step. When the server is
+retuned, mirror it here in the same change. The feature rows follow the tier
+table in the app repository's `docs/proposal-billing-tiers.md`.
 
 ## Publishing
 
