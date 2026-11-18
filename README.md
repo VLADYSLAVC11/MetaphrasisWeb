@@ -1,8 +1,8 @@
 # MetaphrasisWeb
 
 The Metaphrasis website: the product page, the Privacy Policy and Terms of Use,
-Support, and the release notes. GitHub Pages builds it with Jekyll, straight
-from `main`.
+Support, plans and the release notes, at <https://metaphrasis.org/>. GitHub
+Pages builds it with Jekyll, straight from `main`.
 
 The app links to these paths, and a link compiled into a release stays in it,
 so **they must never change**:
@@ -19,19 +19,18 @@ so **they must never change**:
 The design reasons are in the app repository's
 `docs/proposal-about-and-website.md`.
 
-## Placeholders
+## Site facts
 
-Every choice not yet made is a `[TBD: …]` value in `_config.yml`, under
-`metaphrasis:`: publisher, contact email, governing law, the policies' effective
-date and the App Store link. The pages read these from there and nowhere else.
-The release date of 1.0 is in `_data/releases.yml`.
+`_config.yml`, under `metaphrasis:`, holds the publisher, the contact address,
+the governing law, the policies' effective date and the App Store link. The
+pages read them from there and nowhere else. Two are still open: the App Store
+link (empty shows "Coming soon"), and 1.0's date in `_data/releases.yml` (empty
+shows "Upcoming").
 
-```sh
-grep -rn "TBD" --include="*.yml" --include="*.md" --include="*.html" .
-```
-
-The Privacy Policy and Terms are drafts written from what the app does. Have
-them read by someone qualified before publishing.
+The Privacy Policy and Terms are written from what the app, the SDK and the
+Metaphrasis Cloud backend do. A change to any of them that touches data — a new
+vendor, a new thing the server keeps, a retention period — changes the policy
+in the same release. Have them read by someone qualified before publishing.
 
 ## Plans and prices
 
@@ -45,8 +44,21 @@ table in the app repository's `docs/proposal-billing-tiers.md`.
 ## Publishing
 
 In the repository's Settings › Pages, choose *Deploy from a branch*, `main`,
-`/ (root)`. GitHub Pages serves a public repository free. The site is then at
-<https://vladyslavc11.github.io/MetaphrasisWeb/>.
+`/ (root)`. GitHub Pages serves a public repository free.
+
+The site is served at the custom domain `metaphrasis.org`, named by the `CNAME`
+file and by `url` in `_config.yml`, with *Enforce HTTPS* on. DNS:
+
+| Name | Type | Value |
+|---|---|---|
+| `@` | A | `185.199.108.153` `185.199.109.153` `185.199.110.153` `185.199.111.153` |
+| `@` | AAAA | `2606:50c0:8000::153` `2606:50c0:8001::153` `2606:50c0:8002::153` `2606:50c0:8003::153` |
+| `www` | CNAME | `vladyslavc11.github.io` |
+| `_github-pages-challenge-<owner>` | TXT | the domain verification GitHub shows |
+
+GitHub redirects `www` and the old `vladyslavc11.github.io/MetaphrasisWeb/`
+addresses to it. If the repository moves to another owner, verify the domain
+again under that owner.
 
 ## Releasing a version
 
@@ -62,17 +74,9 @@ any change that matters in the release notes.
 
 ```sh
 bundle install
-bundle exec jekyll serve        # http://localhost:4000/MetaphrasisWeb/
+bundle exec jekyll serve        # http://localhost:4000/
 ```
 
 The `Gemfile` pins the Jekyll version GitHub Pages runs (3.10). It does not
 use the `github-pages` gem itself, which does not install on Ruby 4.
 
-## Moving to a custom domain
-
-1. Set `url` to the domain and `baseurl` to `""` in `_config.yml`.
-2. Add a `CNAME` file containing the domain.
-3. Point the domain's DNS at GitHub Pages, and turn on *Enforce HTTPS*.
-4. In the same app release, change `AppLinks.site`.
-
-The paths stay the same.

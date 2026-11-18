@@ -74,6 +74,12 @@ a { color: var(--accent); text-underline-offset: 2px; }
 .site-header nav a { color: var(--muted); text-decoration: none; }
 .site-header nav a:hover { color: var(--text); }
 
+/* Three links beside the name don't fit a phone: keep the icon, drop its word. */
+@media (max-width: 26rem) {
+  .brand span { display: none; }
+  .site-header nav { gap: 16px; }
+}
+
 main { flex: 1; padding-bottom: 48px; }
 
 h1, h2, h3 { line-height: 1.25; color: var(--brand); }
@@ -201,7 +207,15 @@ code { font-size: 0.9em; }
 .plan-notes { color: var(--muted); font-size: 0.9rem; padding-left: 1.2em; margin: 20px 0; }
 .plan-notes li + li { margin-top: 6px; }
 
+.home-languages { text-align: center; color: var(--muted); font-size: 0.94rem; margin-top: 24px; }
 .home-plans { text-align: center; color: var(--muted); margin-top: 28px; }
+
+/* Tables in the policies: ruled rows, read top-down on a phone. */
+
+table { width: 100%; border-collapse: collapse; font-size: 0.94rem; margin: 1em 0 1.25em; }
+th, td { text-align: left; vertical-align: top; padding: 8px 12px 8px 0; border-bottom: 1px solid var(--rule); }
+th { color: var(--muted); font-weight: 600; }
+td:last-child, th:last-child { padding-right: 0; }
 
 /* Release notes */
 

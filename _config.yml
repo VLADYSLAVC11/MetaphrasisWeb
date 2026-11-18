@@ -6,30 +6,29 @@ title: Metaphrasis
 description: Speak or type, and Metaphrasis translates — on your iPhone wherever it can.
 lang: en
 
-# Where the site is served. Moving to a custom domain later: set `url` to it,
-# set `baseurl` to "", add a CNAME file, and change AppLinks.site in the app in
-# the same release. The paths below the root never change.
-url: "https://vladyslavc11.github.io"
-baseurl: "/MetaphrasisWeb"
+# Where the site is served: the custom domain, named by the CNAME file too.
+# The app's AppLinks.site is this root, and the paths below it never change.
+url: "https://metaphrasis.org"
+baseurl: ""
 
 # ---------------------------------------------------------------------------
-# PLACEHOLDERS. Every "[TBD: …]" is a choice still to be made, and the pages
-# read it from here and nowhere else, so filling one in fills every page.
-# `grep -rn "TBD" .` lists what is left.
+# The facts every page reads from here and nowhere else, so changing one
+# changes every page.
 # ---------------------------------------------------------------------------
 metaphrasis:
   # Who publishes the app: a person's name or a company's legal name. Used in
   # the © line and as the party in both policies.
-  publisher: "[TBD: publisher]"
+  publisher: "Vladyslav Chelborakh"
 
   # Where privacy and support questions go. Shown on Support, Privacy and Terms.
-  contact_email: "[TBD: contact email]"
+  contact_email: "support@metaphrasis.org"
 
-  # Whose law governs the Terms of Use, e.g. "Greece" or "Ukraine".
-  governing_law: "[TBD: country]"
+  # Where the publisher lives: whose law governs the Terms of Use, and where
+  # the Privacy Policy's controller is.
+  governing_law: "Ukraine"
 
   # The date both policies take effect, normally the day they are published.
-  policies_effective: "[TBD: effective date]"
+  policies_effective: "18 November 2026"
 
   # The App Store page, once App Store Connect has created the app record.
   # Empty shows "Coming soon to the App Store".
